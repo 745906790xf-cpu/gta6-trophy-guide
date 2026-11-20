@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI Tracker &amp; Roadmap</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="badge">GTA VI · PS5</div>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="sub">Offline tracker &amp; platinum roadmap · 55 trophies · 1 platinum, 2 gold, 6 silver, 46 bronze</p>
+  </div>
+  <div class="progressbox" id="progressbox" aria-live="polite"></div>
+</header>
+<nav class="tabs" role="tablist">
+  <button id="tab-tracker" class="tab active" type="button">Tracker</button>
+  <button id="tab-roadmap" class="tab" type="button">Roadmap to Platinum</button>
+</nav>
+<section class="toolbar" id="toolbar">
+  <label>Kind
+    <select id="kind">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="missable">Missable</option>
+      <option value="collectibles">Collectibles</option>
+      <option value="activities">Activities</option>
+      <option value="online">Online</option>
+    </select>
+  </label>
+  <label>Grade
+    <select id="grade">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label>Status
+    <select id="status">
+      <option value="all">Earned + remaining</option>
+      <option value="earned">Earned only</option>
+      <option value="remaining">Remaining only</option>
+    </select>
+  </label>
+  <label class="search">Search
+    <input id="search" type="search" placeholder="Name or description…">
+  </label>
+  <label class="spoiler"><input id="spoiler" type="checkbox"> Spoiler-safe (hide hidden trophies)</label>
+  <button id="export" type="button">Export progress</button>
+  <label class="importbtn">Import progress <input id="import" type="file" accept="application/json"></label>
+  <button id="reset" type="button">Reset</button>
+</section>
+<main>
+  <section id="view-tracker" class="view">
+    <div class="split">
+      <div class="listwrap">
+        <p class="hint" id="listhint">Tick a trophy to mark it earned. Click a row to open its full guide and sources. Progress is saved in this browser.</p>
+        <table class="trophies">
+          <thead><tr><th class="c-earned">Earned</th><th>Trophy</th><th class="c-grade">Grade</th><th class="c-kind">Kind</th><th class="c-flag">Flags</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <aside id="detail" class="detail" aria-live="polite"></aside>
+    </div>
+  </section>
+  <section id="view-roadmap" class="view hidden">
+    <div id="roadmap"></div>
+  </section>
+</main>
+<footer class="foot">
+  <p>Official names, descriptions and grades: PlayStation official trophy list as listed by PSNProfiles and Exophase. All guides written for this entry in original words; sources are named beside each trophy. No game artwork is used. Works fully offline — no network requests.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
